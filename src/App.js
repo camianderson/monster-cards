@@ -7,6 +7,7 @@ import  SearchBox from './components/SearchBox/SearchBox';
 const App = () => {
   const [monsters, setMonsters] = useState([]);
   const [searchField, setSearchField] = useState('');
+  const [filteredMosnters, setFilteredMonsters] = useState(monsters);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -14,14 +15,17 @@ const App = () => {
       .then(users => setMonsters(users))
   },[])
 
+  useEffect(()=> {
+    const newFilteredMonsters = monsters.filter(monster => {
+      return monster.name.toLocaleLowerCase().includes(searchField)
+    }); 
+    setFilteredMonsters(newFilteredMonsters);
+  }, [monsters, searchField])
+
   const handleEventChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
     setSearchField(searchFieldString)
   }
-
-  const filteredMonsters = monsters.filter(monster => {
-    return monster.name.toLocaleLowerCase().includes(searchField)
-  }); 
 
   return (
     <div className="App">
@@ -31,7 +35,7 @@ const App = () => {
         placeholder='search monsters'
         className='monster-search-box'
       />
-      <CardList monsters={filteredMonsters}/>
+      <CardList monsters={filteredMosnters}/>
     </div>
   );
 }
