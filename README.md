@@ -37,7 +37,7 @@ This project was created to improve my concepts in React class components and fi
 6. Go to http://localhost:3000/ to view the site.
 
 ### Deployed Link
-[View the site here!](https://camianderson.github.io/monster-cards/)
+[View the site here!](https://monsters-card.herokuapp.com/)
 
 ## Illustrations
 ![monster-gif](https://media.giphy.com/media/ZJBykMyzJyOXR6PvHx/giphy.gif)<br>
