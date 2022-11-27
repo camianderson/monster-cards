@@ -14,7 +14,7 @@
 
 Monster Cards allow you to search for specific monsters in the deck of cards. A simple and efficient way to find your monster inside your card deck!
 
-This project was created to improve my concepts in React class components and filtering functionality.
+This project was created to improve my concepts in React class components, functional components and filtering functionality.
 
 ## Technologies
 
